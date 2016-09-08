@@ -1,19 +1,27 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\script\hero\VHero.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\script\uiScript\VUIMainMenu.cs">
     <Files>
-      <File FileName="Assets\script\hero\VHero.cs" Line="40" Column="11" />
-      <File FileName="Assets\script\Scene\SceneManager.cs" Line="14" Column="44" />
+      <File FileName="Assets\script\hero\VHero.cs" Line="1" Column="1" />
+      <File FileName="Assets\script\Scene\SceneManager.cs" Line="1" Column="1" />
       <File FileName="Assets\script\Main.cs" Line="1" Column="1" />
       <File FileName="Assets\script\baseScript\VInputController.cs" Line="1" Column="1" />
       <File FileName="Assets\script\TemplateManager\VHeroManager.cs" Line="1" Column="1" />
       <File FileName="Assets\script\TemplateManager\VMonsterTemManager.cs" Line="1" Column="1" />
       <File FileName="Assets\script\VGame.cs" Line="1" Column="1" />
-      <File FileName="Assets\script\hero\HurtSphere.cs" Line="41" Column="1" />
+      <File FileName="Assets\script\hero\HurtSphere.cs" Line="1" Column="1" />
+      <File FileName="Assets\script\uiScript\VUIMainMenu.cs" Line="41" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="D:\Git\GitHubStudio\Dev\DemoA\Assets\script\uiScript\VUIMainMenu.cs" line="37" />
+      <Breakpoint file="D:\Git\GitHubStudio\Dev\DemoA\Assets\script\uiScript\VUIMainMenu.cs" line="45" />
+      <Breakpoint file="D:\Git\GitHubStudio\Dev\DemoA\Assets\script\uiScript\VUIMainMenu.cs" line="41" />
+      <Breakpoint file="D:\Git\GitHubStudio\Dev\DemoA\Assets\script\uiScript\VUIMainMenu.cs" line="43" />
+      <Breakpoint file="D:\Git\GitHubStudio\Dev\DemoA\Assets\script\uiScript\VUIMainMenu.cs" line="39" />
+      <Breakpoint file="D:\Git\GitHubStudio\Dev\DemoA\Assets\script\uiScript\VUIMainMenu.cs" line="34" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

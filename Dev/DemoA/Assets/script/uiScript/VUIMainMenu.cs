@@ -28,9 +28,20 @@ public class VUIMainMenu: VUIBase
 	}
 
 	#region ui event
+	int test_num = 1;
+	int test_num_BB = 3;
 	private void _ClickStart(){
+		test_num += 2;
 
+		test_num_BB += 3;
 		this.OnClose();
+
+		test_num_BB += 3;
+
+		test_num += 2;
+
+		test_num_BB += 3;
+
 		VGame.SceneManager.StartGame();
 	}
 	private void _ClickExit(){
