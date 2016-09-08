@@ -1,0 +1,47 @@
+VGame.HeroTemplateManager
+
+Dictionary<int,VHero> HeroTable = new Dictionary<int,VHero>();
+
+Init(){}
+
+Load(){
+	//Load HeroTemplate...
+}
+
+LoadHero(int id){
+        Instantiate(	Resources.Load();  );
+	
+}
+
+Clear(){
+	
+}
+
+public class VHero{
+	
+	Init(){  }
+	
+	SetupSkill();
+
+	private Transform _Handle;
+	public Transform Handle{ get ; }
+}
+-------------------------
+public class VHeroInfo{
+	int Id;
+	string Name;	
+}
+------------------------------
+public enum VHeroMoveState{
+	Idle;	
+	Walk;
+	Death;
+}
+public enum VHeroAttackState{
+	Attack,
+ 	Idle,
+}
+
+
+
+

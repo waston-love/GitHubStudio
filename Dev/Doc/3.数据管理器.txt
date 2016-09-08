@@ -1,0 +1,27 @@
+VGame.MapManager
+	
+	Dictionary<int,MapInfo> MapSetting = new Dictionary<int,MapInfo>();
+
+	Init(){
+		Load(string path){
+			MapInfo info = new ReadTab(path)
+			MapSetting.Add( info );
+		}
+	}
+	Reset(){}
+	Load(){}
+	Clear(){}
+
+	GetXXX(){}
+
+---------------------------------
+
+map.tab 
+id	path part
+100001	map	1
+
+-----------------------------------
+public class MapInfo{
+	public int Id;
+	public string Path;
+}

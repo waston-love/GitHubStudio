@@ -1,0 +1,13 @@
+1. 实现 Game.Mode.Main
+	Game.Mode.Fight
+2.实现 SceneInfo
+	SceneID	Path	Obj1	Obj2	Obj3	...
+
+public class Obj{
+	int Id;
+	string path
+	Vector3 position;
+	Vector3 rotation;
+	Vector3 Scale;
+}
+	

@@ -1,0 +1,9 @@
+VGame.InputController
+
+	Init()
+	Active(){
+		if(Input.GetKey(Up/Down/Left/Right))
+			VGame.SceneManager.Input( Up/Down/Left/Right )	
+
+	}
+

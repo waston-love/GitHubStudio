@@ -1,0 +1,19 @@
+VGame.SceneManager
+
+	Init(){}
+	Reset(){}
+	LoadMap(int Id){}
+	ClearMap(){}
+	
+	StartGame(){
+		Clear();
+		LoadMap();
+		LoadHero();
+	}
+
+	Input(Direction dir){
+		_Captain.Move();
+		Hero.Move();
+	}
+
+	private VHero _Captain;

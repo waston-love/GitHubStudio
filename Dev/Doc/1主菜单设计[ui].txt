@@ -1,0 +1,9 @@
+ MenuWindow Panel
+
+	BG Sprite
+	
+	BtnStart [sprite]
+		Label
+	BtnExit [sprite]
+		Label
+
