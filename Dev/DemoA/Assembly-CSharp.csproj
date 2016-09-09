@@ -150,6 +150,8 @@
      <Compile Include="Assets\NGUI\Scripts\UI\UITooltip.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UIViewport.cs" />
      <Compile Include="Assets\script\Main.cs" />
+     <Compile Include="Assets\script\Player\PlayerBaseData.cs" />
+     <Compile Include="Assets\script\Player\VClientplayer.cs" />
      <Compile Include="Assets\script\Scene\SceneManager.cs" />
      <Compile Include="Assets\script\TemplateManager\MapManager.cs" />
      <Compile Include="Assets\script\TemplateManager\VHeroManager.cs" />
@@ -160,17 +162,12 @@
      <Compile Include="Assets\script\baseScript\VTabFile.cs" />
      <Compile Include="Assets\script\hero\HurtSphere.cs" />
      <Compile Include="Assets\script\hero\VHero.cs" />
-     <Compile Include="Assets\script\house\ClientPlayer.cs" />
-     <Compile Include="Assets\script\house\HouseManager.cs" />
-     <Compile Include="Assets\script\house\ShopSystem.cs" />
-     <Compile Include="Assets\script\house\TemplateManager.cs" />
      <Compile Include="Assets\script\uiScript\VUIBase.cs" />
-     <Compile Include="Assets\script\uiScript\VUIHomePanel.cs" />
      <Compile Include="Assets\script\uiScript\VUILoading.cs" />
      <Compile Include="Assets\script\uiScript\VUIMainMenu.cs" />
      <Compile Include="Assets\script\uiScript\VUIManager.cs" />
+     <Compile Include="Assets\script\uiScript\VUIPlayerInofoWindow.cs" />
      <Compile Include="Assets\script\uiScript\VUIRegisterName.cs" />
-     <Compile Include="Assets\script\uiScript\VUITitle.cs" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Masked 1.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text 2.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Masked 2.shader" />

@@ -36,9 +36,8 @@ public class VUIRegisterName : VUIBase
 
 	#region ui event
 	private void _ClickOK(){
-		Debug.Log("Name: " + _InputName.text);
-		Debug.Log("Age: " + _InputAge.text);
-		Debug.Log("赋值 玩家数据");
+
+		VGame.Instance.Clientplayer.SetName(_InputName.text);
 
 		VGame.SceneManager.StartGame();
 

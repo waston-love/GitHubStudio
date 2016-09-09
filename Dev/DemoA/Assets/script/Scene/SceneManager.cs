@@ -49,6 +49,9 @@ public class SceneManager
 		LoadMap(1);
 		LoadHero(1);
 		LoadMonster();
+
+		VRepresent.UIManager.OpenWindow<VUIPlayerInofoWindow>();
+
 	}
 	
 	public void Input(Direct dir){

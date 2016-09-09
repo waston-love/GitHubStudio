@@ -14,9 +14,8 @@ public class VGame {
 	public VHeroManager HeroManager;
 	public VMonsterTemManager MonsterManager;
 
-	public HouseManager HouseManager;
-	public static TemplateManager TemplateManager;
-	public static ClientPlayer ClientPlayer;
+	public VClientplayer Clientplayer ;
+
 
 	public static SceneManager SceneManager;
 	public static VInputController InputController;
@@ -32,6 +31,9 @@ public class VGame {
 
 	public IEnumerator InitGameBaseConfig()
 	{
+		Clientplayer = new VClientplayer();
+		Clientplayer.Init();
+
 		MapManager = new MapManager();
 		MapManager.Init();
 
@@ -41,21 +43,14 @@ public class VGame {
 		MonsterManager = new VMonsterTemManager();
 		MonsterManager.Init();
 
-		HouseManager = new HouseManager();
-		HouseManager.Init();
-		
-		TemplateManager = new TemplateManager();
-		TemplateManager.Init(Main.TemplateBuildingDataPath,Main.TemplateThingDataPath);
-		
 		InitBaseConfiged = true;
 		CheckLoaded();
 		yield return null;
 	}
 
 	public IEnumerator InitGameLogic(){
-		
-		ClientPlayer = new ClientPlayer();
-		ClientPlayer.Init();
+
+
 
 		SceneManager = new SceneManager();
 		SceneManager.Init();
