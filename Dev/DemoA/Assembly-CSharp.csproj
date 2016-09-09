@@ -169,6 +169,7 @@
      <Compile Include="Assets\script\uiScript\VUILoading.cs" />
      <Compile Include="Assets\script\uiScript\VUIMainMenu.cs" />
      <Compile Include="Assets\script\uiScript\VUIManager.cs" />
+     <Compile Include="Assets\script\uiScript\VUIRegisterName.cs" />
      <Compile Include="Assets\script\uiScript\VUITitle.cs" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Masked 1.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text 2.shader" />
