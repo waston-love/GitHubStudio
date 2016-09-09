@@ -1,0 +1,10 @@
+9-8
+
+1. 下载 gitHub					ok
+2. 上传 dev/design				ok
+3. 在上传 dev 的同时 ，安装 spine 动画软件	ok
+4. 安装 VSStudion 2015 C# 			ok
+5.GitHub 附到 开始菜单				ok
+6.Monodevelop 断点调试				ok
+
+1. 开始 完善 第一个 核心战斗版本
