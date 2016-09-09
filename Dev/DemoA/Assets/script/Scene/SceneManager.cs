@@ -50,8 +50,8 @@ public class SceneManager
 		LoadHero(1);
 		LoadMonster();
 
+		VRepresent.UIManager.CloseWindow<VUIMainMenu>();
 		VRepresent.UIManager.OpenWindow<VUIPlayerInofoWindow>();
-
 	}
 	
 	public void Input(Direct dir){

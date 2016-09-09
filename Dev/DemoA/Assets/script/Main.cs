@@ -53,11 +53,12 @@ public class Main : MonoBehaviour {
 	public static string ShopDataPath = "gamesetting/house/shop.tab";
 	public static string TemplateBuildingDataPath = "gamesetting/sprites/buildng.tab";
 	public static string TemplateThingDataPath = "gamesetting/sprites/thing.tab";
-	public static string ClientPlayerDataPath = "gamesetting/user/user.tab";
+	//public static string ClientPlayerDataPath = "gamesetting/user/user.tab";
 
 	public static string MapDataPath = "gamesetting/map/map.tab";
 	public static string HeroDataPath = "gamesetting/hero/hero.tab";
 	public static string MonsterDataPath = "gamesetting/hero/monster.tab";
+	public static string ClientPlayerDataPath = "gamesetting/user/user_config.tab";
 	#endregion
 
 	#region Debug

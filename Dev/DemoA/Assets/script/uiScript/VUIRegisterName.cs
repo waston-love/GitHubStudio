@@ -39,10 +39,13 @@ public class VUIRegisterName : VUIBase
 
 		VGame.Instance.Clientplayer.SetName(_InputName.text);
 
+		VGame.Instance.Clientplayer.SavePlayerSettings();
+
+
 		VGame.SceneManager.StartGame();
 
 		this.OnClose();
-		VRepresent.UIManager.CloseWindow<VUIMainMenu>();
+
 	}
 	#endregion
 }

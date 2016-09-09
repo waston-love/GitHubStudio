@@ -26,6 +26,15 @@ public class VTabFile {
 		ParseString(text);
 	}
 
+	public static VTabFile LoadFromFile(string fileFullPath)
+	{
+		VTabFile tabFile = new VTabFile();
+		if (tabFile.LoadByIO(fileFullPath))
+			return tabFile;
+		else
+			return null;
+	}
+
 	string LoadSettingOutPackage(string path,bool isGBK){
 		string fullPath = null;
 		if(Application.platform == RuntimePlatform.Android){
@@ -41,6 +50,26 @@ public class VTabFile {
 			System.Threading.Thread.Sleep(1);
 		System.Text.Encoding encoding = System.Text.Encoding.UTF8;
 		return encoding.GetString(www.bytes);
+	}
+
+	public bool LoadByIO(string fileName)
+	{
+		FileStream fileStream = new FileStream(fileName, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+		
+		StreamReader oReader;
+		try
+		{
+			oReader = new StreamReader(fileStream, System.Text.Encoding.Default);
+		}
+		catch
+		{
+			return false;
+		}
+		
+		ParseReader(oReader);
+		
+		oReader.Close();
+		return true;
 	}
 
 	private bool ParseString(string content)
@@ -238,4 +267,97 @@ public class VTabFile {
 	{
 		return ColCount;
 	}
+
+	public bool Save(string fileName)
+	{
+		bool result = false;
+		StringBuilder sb = new StringBuilder();
+		foreach (KeyValuePair<int, List<string>> item in TabInfo)
+		{
+			int i = 0;
+			foreach (string str in item.Value)
+			{
+				i++;
+				sb.Append(str);
+				if (i != item.Value.Count)
+				{
+					sb.Append('\t');
+				}
+				else
+				{
+					sb.Append('\r');
+					sb.Append('\n');
+				}
+			}
+		}
+		
+		try
+		{
+			using (FileStream fs = new FileStream(Application.persistentDataPath + "/" + fileName, FileMode.Create))
+			{
+				using (StreamWriter sw = new StreamWriter(fs, System.Text.Encoding.Default))
+				{
+					sw.Write(sb);
+					
+					result = true;
+				}
+			}
+		}
+		catch(IOException e)
+		{
+			Debug.LogError("可能文件正在被Excel打开?" + e.Message);
+			result = false;
+		}
+		
+		return result;
+	}
+	public int NewRow()
+	{
+		List<string> list = new List<string>();
+		for (int i = 0; i < ColCount; i++)
+		{
+			list.Add("");
+		}
+		TabInfo.Add(TabInfo.Count + 1, list);
+		return TabInfo.Count;
+	}
+	#region set
+	
+	public bool SetValue<T>(int row, int column, T value)
+	{
+		if (column > ColCount || row <= 0 || column <= 0)  
+		{
+			return false;
+		}
+		
+		if (row > TabInfo.Count)
+			NewRow();
+		
+		string content = Convert.ToString(value);
+		if (row == 1)
+		{
+			foreach (KeyValuePair<string, int> item in ColIndex)
+			{
+				if (item.Value == column)
+				{
+					ColIndex.Remove(item.Key);
+					ColIndex[content] = item.Value;
+					break;
+				}
+			}
+		}
+		TabInfo[row].RemoveAt(column - 1);
+		TabInfo[row].Insert(column - 1, content);
+		return true;
+	}
+	
+	public bool SetValue<T>(int row, string columnName, T value)
+	{
+		int column;
+		if (!ColIndex.TryGetValue(columnName, out column))
+			return false;
+		
+		return SetValue(row, column, value);
+	}
+	#endregion
 }
