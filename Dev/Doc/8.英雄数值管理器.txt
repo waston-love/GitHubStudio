@@ -1,0 +1,14 @@
+VGame.VTempHeroManager
+	Init(){}
+
+	Load(){}
+
+Hero/Monster
+
+Id	Name	Level	Hp	Defense	HealthRecoverSpeed	AttackPhysic	AttackCriticalPossibility	MoveSpeed	ResName	DeadResID	HidePoint
+
+
+
+
+
+
