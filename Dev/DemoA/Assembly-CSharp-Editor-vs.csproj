@@ -182,6 +182,7 @@
      <None Include="Assets\spine-unity\Shaders\Skeleton.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Masked.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text (TextureClip).shader" />
+     <None Include="Assets\Resources\Animation\candy\skeleton.atlas.txt" />
      <None Include="Assets\spine-unity\Shaders\SkeletonForHyb.shader" />
      <None Include="Assets\spine-unity\Shaders\SkeletonLit.shader" />
  <Reference Include="UnityEngine.UI">

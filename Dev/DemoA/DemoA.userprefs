@@ -1,9 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\spine-unity\Shaders\SkeletonForFence.shader">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="C:\Users\Hsir\Desktop\TrySpine\Assets\spine-unity\Assets\spine-unity\Modules\Ragdoll\SkeletonRagdoll2D.cs">
     <Files>
-      <File FileName="C:\Users\Hsir\Desktop\TrySpine\Assets\spine-unity\SkeletonAnimation.cs" Line="173" Column="58" />
-      <File FileName="Assets\spine-unity\Shaders\SkeletonForFence.shader" Line="1" Column="1" />
+      <File FileName="C:\Users\Hsir\Desktop\TrySpine\Assets\spine-unity\Assets\spine-unity\Modules\Ragdoll\SkeletonRagdoll2D.cs" Line="38" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
