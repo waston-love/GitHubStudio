@@ -269,15 +269,18 @@
      <None Include="Assets\spine-unity\Modules\Ghost\Shaders\SkeletonGhost.shader" />
      <None Include="Assets\Resources\Animation\skeleton.atlas.txt" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored.shader" />
+     <None Include="Assets\Resources\Animation\Hero\skeleton.atlas.txt" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Packed.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Packed 3.shader" />
      <None Include="Assets\spine-unity\Modules\SkeletonGraphic\Shaders\SkeletonGraphic.shader" />
      <None Include="Assets\spine-unity\Shaders\Skeleton.shader" />
+     <None Include="Assets\Resources\Animation\noc_ok\npc.atlas.txt" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Masked.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text (TextureClip).shader" />
      <None Include="Assets\Resources\Animation\candy\skeleton.atlas.txt" />
      <None Include="Assets\spine-unity\Shaders\SkeletonForHyb.shader" />
+     <None Include="Assets\Resources\Animation\AttHeroBzr_L1\AttHeroBzr_L1.atlas.txt" />
      <None Include="Assets\spine-unity\Shaders\SkeletonLit.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Unity/511/exe/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

@@ -1,0 +1,167 @@
+
+AttHeroBzr_L1.png
+size: 1024,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+dabi you
+  rotate: false
+  xy: 438, 49
+  size: 76, 77
+  orig: 76, 77
+  offset: 0, 0
+  index: -1
+dabi zuo
+  rotate: false
+  xy: 516, 54
+  size: 81, 72
+  orig: 81, 72
+  offset: 0, 0
+  index: -1
+datui you
+  rotate: false
+  xy: 183, 3
+  size: 43, 31
+  orig: 43, 31
+  offset: 0, 0
+  index: -1
+datui zuo
+  rotate: false
+  xy: 929, 42
+  size: 40, 34
+  orig: 40, 34
+  offset: 0, 0
+  index: -1
+jiao you
+  rotate: true
+  xy: 144, 2
+  size: 28, 37
+  orig: 28, 37
+  offset: 0, 0
+  index: -1
+jiao you2
+  rotate: false
+  xy: 618, 30
+  size: 42, 33
+  orig: 42, 33
+  offset: 0, 0
+  index: -1
+jiao zuo
+  rotate: false
+  xy: 618, 2
+  size: 38, 26
+  orig: 38, 26
+  offset: 0, 0
+  index: -1
+shenti
+  rotate: true
+  xy: 311, 32
+  size: 94, 125
+  orig: 94, 125
+  offset: 0, 0
+  index: -1
+shou you
+  rotate: false
+  xy: 516, 2
+  size: 55, 50
+  orig: 55, 50
+  offset: 0, 0
+  index: -1
+shouwoquan zuo
+  rotate: false
+  xy: 438, 2
+  size: 49, 45
+  orig: 49, 45
+  offset: 0, 0
+  index: -1
+shouwoquan zuo2
+  rotate: false
+  xy: 573, 8
+  size: 43, 44
+  orig: 43, 44
+  offset: 0, 0
+  index: -1
+shouzhangkai zuo
+  rotate: false
+  xy: 813, 70
+  size: 56, 56
+  orig: 56, 56
+  offset: 0, 0
+  index: -1
+shouzhangkai2 zuo
+  rotate: false
+  xy: 871, 70
+  size: 56, 56
+  orig: 56, 56
+  offset: 0, 0
+  index: -1
+shouzhangkai3 zuo
+  rotate: false
+  xy: 599, 65
+  size: 72, 61
+  orig: 72, 61
+  offset: 0, 0
+  index: -1
+tou
+  rotate: true
+  xy: 929, 78
+  size: 48, 59
+  orig: 48, 59
+  offset: 0, 0
+  index: -1
+wuqi
+  rotate: false
+  xy: 170, 36
+  size: 139, 90
+  orig: 139, 90
+  offset: 0, 0
+  index: -1
+xianglian
+  rotate: true
+  xy: 2, 2
+  size: 46, 78
+  orig: 46, 78
+  offset: 0, 0
+  index: -1
+xiaobi you
+  rotate: true
+  xy: 673, 66
+  size: 60, 72
+  orig: 60, 72
+  offset: 0, 0
+  index: -1
+xiaobi zuo
+  rotate: false
+  xy: 747, 71
+  size: 64, 55
+  orig: 64, 55
+  offset: 0, 0
+  index: -1
+xiaotui you
+  rotate: false
+  xy: 971, 41
+  size: 33, 35
+  orig: 33, 35
+  offset: 0, 0
+  index: -1
+xiaotui zuo
+  rotate: false
+  xy: 990, 91
+  size: 32, 35
+  orig: 32, 35
+  offset: 0, 0
+  index: -1
+yaodai
+  rotate: false
+  xy: 82, 12
+  size: 60, 36
+  orig: 60, 36
+  offset: 0, 0
+  index: -1
+yingzi
+  rotate: false
+  xy: 2, 50
+  size: 166, 76
+  orig: 166, 76
+  offset: 0, 0
+  index: -1
