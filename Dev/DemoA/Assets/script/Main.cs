@@ -58,6 +58,8 @@ public class Main : MonoBehaviour {
 	public static string MapDataPath = "gamesetting/map/map.tab";
 	public static string HeroDataPath = "gamesetting/hero/hero.tab";
 	public static string MonsterDataPath = "gamesetting/hero/monster.tab";
+	public static string StageDataPath = "gamesetting/map/stagepath.tab";
+
 	public static string ClientPlayerDataPath = "gamesetting/user/user_config.tab";
 	#endregion
 

@@ -156,6 +156,7 @@
      <Compile Include="Assets\script\TemplateManager\MapManager.cs" />
      <Compile Include="Assets\script\TemplateManager\VHeroManager.cs" />
      <Compile Include="Assets\script\TemplateManager\VMonsterTemManager.cs" />
+     <Compile Include="Assets\script\TemplateManager\VStageTemManager.cs" />
      <Compile Include="Assets\script\VGame.cs" />
      <Compile Include="Assets\script\VRepresent.cs" />
      <Compile Include="Assets\script\baseScript\VInputController.cs" />
@@ -168,6 +169,7 @@
      <Compile Include="Assets\script\uiScript\VUIManager.cs" />
      <Compile Include="Assets\script\uiScript\VUIPlayerInofoWindow.cs" />
      <Compile Include="Assets\script\uiScript\VUIRegisterName.cs" />
+     <Compile Include="Assets\script\uiScript\VUISubway.cs" />
      <Compile Include="Assets\spine-csharp\Animation.cs" />
      <Compile Include="Assets\spine-csharp\AnimationState.cs" />
      <Compile Include="Assets\spine-csharp\AnimationStateData.cs" />

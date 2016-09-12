@@ -13,6 +13,7 @@ public class VGame {
 	public MapManager MapManager;
 	public VHeroManager HeroManager;
 	public VMonsterTemManager MonsterManager;
+	public VStageTemManager StageTemManager;
 
 	public VClientplayer Clientplayer ;
 
@@ -42,6 +43,9 @@ public class VGame {
 
 		MonsterManager = new VMonsterTemManager();
 		MonsterManager.Init();
+
+		StageTemManager  =new VStageTemManager();
+		StageTemManager.Init();
 
 		InitBaseConfiged = true;
 		CheckLoaded();

@@ -10,4 +10,5 @@ public class Obj{
 	Vector3 rotation;
 	Vector3 Scale;
 }
-	
+
+3.封装 TemManager 模块，使他继承自同一个类，具有继承，关系

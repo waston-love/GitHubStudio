@@ -31,10 +31,11 @@ public class VUIMainMenu: VUIBase
 
 	private void _ClickStart(){
 
-		bool flag = true;
+		//bool flag = true;
 
 		if(VGame.Instance.Clientplayer.IsRegisted){
-			VGame.SceneManager.StartGame();
+			VRepresent.UIManager.OpenWindow<VUISubway>();
+			//VGame.SceneManager.StartGame();
 		}else{			
 			VRepresent.UIManager.OpenWindow<VUIRegisterName>();
 		}

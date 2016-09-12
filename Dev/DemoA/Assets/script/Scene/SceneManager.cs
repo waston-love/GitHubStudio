@@ -44,14 +44,11 @@ public class SceneManager
 
 	void ClearHero(){}
 	
-	public void StartGame(){
+	public void StartGame(int stageId){
 		Clear();
 		LoadMap(1);
 		LoadHero(1);
 		LoadMonster();
-
-		VRepresent.UIManager.CloseWindow<VUIMainMenu>();
-		VRepresent.UIManager.OpenWindow<VUIPlayerInofoWindow>();
 	}
 	
 	public void Input(Direct dir){
@@ -87,7 +84,7 @@ public class SceneManager
 	}
 
 	void LoadMap(int Id){
-		MapInfo info = VGame.Instance.MapManager.GetMap(1000001);
+		MapInfo info = VGame.Instance.MapManager.GetMap(10000001);
 
 		GameObject spr = GameObject.Instantiate(Resources.Load(info.Path+"/" + info.Id.ToString())) as GameObject;
 		spr.name = info.Id.ToString();

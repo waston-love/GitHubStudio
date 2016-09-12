@@ -51,11 +51,9 @@ public class VClientplayer
 		}
 
 		VTabFile tab = new VTabFile(Main.ClientPlayerDataPath);
-		int height = tab.GetHeight();
+		//int height = tab.GetHeight();
 
-		string test = tab.GetString(2, "Age");
-		Debug.Log(tab.GetString(2, "Age"));
-		Debug.Log(tab.GetString(1, "Name"));
+		//string test = tab.GetString(2, "Age");
 
 		_BaseDada.Name = tab.GetString(2, "Name");
 		_BaseDada.Age = tab.GetInteger(2, "Age");
@@ -66,7 +64,7 @@ public class VClientplayer
 //			_BaseDada.Age = tab.GetInteger(row, "Age");
 //		}
 
-		Debug.Log(_BaseDada.Name);
+
 	}
 
 	public void SavePlayerSettings()

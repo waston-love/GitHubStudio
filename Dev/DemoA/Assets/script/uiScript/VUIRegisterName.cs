@@ -11,7 +11,7 @@ public class VUIRegisterName : VUIBase
 	}
 
 	private UILabel _InputName;
-	private UILabel _InputAge;
+	//private UILabel _InputAge;
 
 	public override void OnOpen(params object[] args)
 	{
@@ -29,7 +29,7 @@ public class VUIRegisterName : VUIBase
 		EventDelegate.Add(FindControl<UIButton>("BtnOK").onClick,this._ClickOK);
 
 		_InputName = FindControl<UILabel>("InputName");
-		_InputAge = FindControl<UILabel>("InputAge");
+		//_InputAge = FindControl<UILabel>("InputAge");
 
 	}
 
@@ -41,8 +41,9 @@ public class VUIRegisterName : VUIBase
 
 		VGame.Instance.Clientplayer.SavePlayerSettings();
 
-
-		VGame.SceneManager.StartGame();
+		VRepresent.UIManager.OpenWindow<VUISubway>();
+		//VGame.SceneManager.StartGame();
+		//VGame.SceneManager.StartGame();
 
 		this.OnClose();
 

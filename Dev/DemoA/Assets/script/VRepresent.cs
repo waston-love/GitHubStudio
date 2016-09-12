@@ -9,7 +9,7 @@ public class VRepresent {
 
 	public void InitUI()
 	{
-		GameObject.Find("UI Root/Camera").gameObject.GetComponent<Camera>().orthographicSize = 1;
+		GameObject.Find("UI Root/Camera").gameObject.GetComponent<Camera>().orthographicSize = 1.78f;
 
 		UIManager = GameObject.Find("UI Root/UIController").GetComponent<VUIManager>();
 		UIManager.Init();
