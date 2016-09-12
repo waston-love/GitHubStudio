@@ -46,9 +46,14 @@ public class SceneManager
 	
 	public void StartGame(int stageId){
 		Clear();
-		LoadMap(1);
-		LoadHero(1);
-		LoadMonster();
+
+		VStageInfo stageInfo = VGame.Instance.StageTemManager.GetMap(stageId);
+
+		MapInfo mapInfo = VGame.Instance.MapManager.GetMap(stageInfo.MapId);
+		LoadGround(mapInfo.Ground);
+
+		//LoadHero(1);
+		//LoadMonster();
 	}
 	
 	public void Input(Direct dir){
@@ -83,16 +88,19 @@ public class SceneManager
 
 	}
 
-	void LoadMap(int Id){
-		MapInfo info = VGame.Instance.MapManager.GetMap(10000001);
+	void LoadGround(int Id){
+		//MapInfo info = VGame.Instance.MapManager.GetMap(10000001);
+		string res_path = "prefab/" + (Id/10000000).ToString() + "/" + Id.ToString();
 
-		GameObject spr = GameObject.Instantiate(Resources.Load(info.Path+"/" + info.Id.ToString())) as GameObject;
-		spr.name = info.Id.ToString();
-		//spr.transform.localScale = Vector3.one;
+		GameObject spr = GameObject.Instantiate(Resources.Load(res_path)) as GameObject;
+		spr.name = Id.ToString();
+
 		spr.transform.position = Vector3.zero;
+
+		//spr.transform.localScale = Vector3.one;
 		//spr.transform.rotation = Quaternion.Euler(Vector3.zero);
 
-		_ScenePool.Add(info.Id,spr.transform);
+		_ScenePool.Add(Id,spr.transform);
 	}
 
 	void ClearMap(){

@@ -1,0 +1,12 @@
+1.  ID 分配表						ok
+2. VStageManager					ok
+	load stage.tab					ok
+	显示 VUISubway					ok
+	点击 VUISubway - > LoadScene			ok
+3. VSceneManager					o
+	load ground
+	load monster
+	load hero
+
+
+4.整理工程目录，清除资源

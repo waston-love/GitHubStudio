@@ -22,12 +22,14 @@ public class MapManager
 		
 		VTabFile tab = new VTabFile(Main.MapDataPath);
 		int height = tab.GetHeight();
-		
+
 		for (int row = 2; row <= height; row++)
 		{
 			MapInfo info = new MapInfo();
 			info.Id = tab.GetInteger(row, "Id");
-			info.Path = tab.GetString(row, "Path");
+			info.Ground = tab.GetInteger(row, "Ground");
+			info.Monster = tab.GetInteger(row, "Monster");
+			info.Desk = tab.GetInteger(row, "Desk");
 
 			MapSetting.Add(info.Id,info);
 		}
@@ -47,5 +49,7 @@ public class MapManager
 
 public class MapInfo{
 	public int Id;
-	public string Path;
+	public int Ground;
+	public int Monster;
+	public int Desk;
 }

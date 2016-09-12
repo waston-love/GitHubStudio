@@ -39,6 +39,9 @@ public class VUISubway : VUIBase
 			if(lis == null)
 				lis = st.gameObject.AddComponent<UIEventListener>();
 			lis.onClick += this.ClickStage;
+
+			VStageInfo info = VGame.Instance.StageTemManager.StageSetting[id];
+			st.GetChild(0).GetComponent<UILabel>().text = info.Name;
 		}
 
 	}
@@ -58,6 +61,8 @@ public class VUISubway : VUIBase
 		int stageId = int.Parse(go.name.Substring(8,1));
 		VGame.SceneManager.StartGame(stageId);
 		this.OnClose();
+
+		VRepresent.UIManager.OpenWindow<VUIPlayerInofoWindow>();
 	}
 	#endregion
 }
