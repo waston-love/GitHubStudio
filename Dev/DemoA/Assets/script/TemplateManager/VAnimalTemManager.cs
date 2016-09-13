@@ -46,9 +46,9 @@ public class VAnimalTemManager
 	
 	public void Clear(){}
 	
-	public VHeroInfo GetHero(int id){
+	public VAnimalInfo GetHero(int id){
 		if(this.HeroSetting.ContainsKey(id))
-			return (VHeroInfo)this.HeroSetting[id];
+			return this.HeroSetting[id];
 		return null;
 	}
 
@@ -57,6 +57,14 @@ public class VAnimalTemManager
 			return (VAnimalInfo)this.MonsterSetting[id];
 		return null;
 	}
+
+	public VAnimalInfo GetDesk(int id){
+		if(this.DeskSetting.ContainsKey(id))
+			return (VAnimalInfo)this.DeskSetting[id];
+		return null;
+	}
+
+
 
 }
 

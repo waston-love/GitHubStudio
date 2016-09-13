@@ -15,17 +15,17 @@ public class VInputController
 
 
 	public void Active(){
-		if(Input.GetKey(KeyCode.DownArrow)){
-			VGame.SceneManager.Input(Direct.Down);
-		}else if(Input.GetKey(KeyCode.UpArrow)){
+		if(Input.GetKey(KeyCode.W)){
 			VGame.SceneManager.Input(Direct.Up);
-		}else if(Input.GetKey(KeyCode.LeftArrow)){
+		}else if(Input.GetKey(KeyCode.S)){
+			VGame.SceneManager.Input(Direct.Down);
+		}else if(Input.GetKey(KeyCode.A)){
 			VGame.SceneManager.Input(Direct.Left);
-		}else if(Input.GetKey(KeyCode.RightArrow)){
+		}else if(Input.GetKey(KeyCode.D)){
 			VGame.SceneManager.Input(Direct.Right);
 		}else if(Input.GetKey(KeyCode.Space)){
 			VGame.SceneManager.Input(Direct.Jump);
-		}else if(Input.GetKey(KeyCode.B)){
+		}else if(Input.GetKey(KeyCode.J)){
 			VGame.SceneManager.Input(Direct.Attack);
 		}
 

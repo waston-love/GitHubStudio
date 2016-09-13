@@ -23,9 +23,15 @@ public class VClientplayer
 
 	public void SetName(string name){ _BaseDada.Name = name;	}
 	public void SetAge(int age){ _BaseDada.Age = age; }
+	public void SetHeroId(int heroId){_BaseDada.HeroId = heroId;}
 
 	public string GetName(){ return _BaseDada.Name; }
 	public int GetAge(){ return _BaseDada.Age; }
+	public int HeroId {
+		get{
+			return this._BaseDada.HeroId;
+		}
+	}
 
 	public void SaveData(){
 		//TODO: 保存 当前数据 进入 本地缓存
@@ -57,13 +63,7 @@ public class VClientplayer
 
 		_BaseDada.Name = tab.GetString(2, "Name");
 		_BaseDada.Age = tab.GetInteger(2, "Age");
-
-//		for (int row = 2; row <= height; row++)
-//		{
-//			_BaseDada.Name = tab.GetString(row, "Name");
-//			_BaseDada.Age = tab.GetInteger(row, "Age");
-//		}
-
+		_BaseDada.HeroId = tab.GetInteger(2, "HeroId");
 
 	}
 
@@ -81,7 +81,7 @@ public class VClientplayer
 
 		FileStream fs = System.IO.File.Create(filePath+fileName);
 		StreamWriter sw = new StreamWriter(fs);
-		string str = "Name" + '\t' + "Age"+ "\t" + "WaveNo" + '\t'+ '\r' + '\n';
+		string str = "Name" + '\t' + "Age"+ "\t" + "WaveNo" + '\t'+"HeroId" + '\t'+ '\r' + '\n';
 //		string str = "Lvl" + '\t' + "Exp" + '\t' + "WaveNo" + '\t' + "LeftTime" + '\t' + "CompletedTask" + "\t" + '\r' + '\n';
 		sw.Flush();
 		sw.Write(str);

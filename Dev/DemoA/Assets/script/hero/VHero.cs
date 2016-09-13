@@ -24,7 +24,7 @@ public class VHero : VAnimal
 	public Transform Handle{ 
 		get {
 			return this._Handle;
-		} 
+		}
 	}
 
 	public override void Move(Direct dir){

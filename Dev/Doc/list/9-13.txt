@@ -1,0 +1,26 @@
+
+0.数据存储 Monster/Desk/Hero 加载结构		ok
+1.加载 monster			ok
+2.加载 Desk			ok
+3.加载 Hero			ok
+	ClientPlayer.HeroId
+
+1. LoadScene() 中，
+	1.LoadGround()
+	2.LoadMonster() 
+		读取 map/Stage 中的 monster 数据 [ monsterID ] 
+		从 上一步 加载的 ground 中， 读取 怪物生成点 位置 [顺便把 怪物生成 放在 地编 中去做]
+	3.LoadHero()
+		读取 CLientPlayer 中自己的 英雄数值
+		根据读取的 数值， 加载 Hero
+
+	Animal
+		Hero
+		Monster
+		Desk
+
+VScene.AnimalManager
+
+VScene.MonsterMananger
+VScene.DeskManager
+VScene._Captain 

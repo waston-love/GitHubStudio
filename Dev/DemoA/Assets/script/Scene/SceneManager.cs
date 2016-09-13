@@ -10,6 +10,7 @@ public class SceneManager
 
 	private VHero _Captain;
 	private Dictionary<int,VMonster> _MonsterTab = new Dictionary<int, VMonster>();
+	private Dictionary<int,VDesk> _DeskTab = new Dictionary<int, VDesk>();
 
 	public List<HurtSphere> HurtTab = new List< HurtSphere>();
 
@@ -29,16 +30,22 @@ public class SceneManager
 	void LoadHero(int Id){
 
 		_Captain = new VHero();
-		VHeroInfo info = VGame.Instance.AnimalTemManager.GetHero(2000001);
-		_Captain.Init(info,new Vector3(0,0,0));
+		VAnimalInfo info = VGame.Instance.AnimalTemManager.GetHero(Id);
+		_Captain.Init(info,new Vector3(-2,-1.8f,-3));
 
+	}
+
+	void LoadDesk(MapInfo map){
+		VDesk desk = new VDesk();
+		VAnimalInfo info = VGame.Instance.AnimalTemManager.GetDesk(map.Desk);
+		desk.Init(info,new Vector3(2,2,-8));
+		_DeskTab.Add(info.Id,desk);
 	}
 
 	void LoadMonster(MapInfo map){
 		VMonster mon = new VMonster();
 		VAnimalInfo info = VGame.Instance.AnimalTemManager.GetMonster(map.Monster);
-		mon.Init(info,new Vector3(-2,2,-8));
-
+		mon.Init(info,new Vector3(0,-0.5f,-2));
 		_MonsterTab.Add(info.Id,mon);
 
 	}
@@ -57,9 +64,15 @@ public class SceneManager
 		// monster
 		LoadMonster(mapInfo);
 
+		//
 
-		//LoadHero(1);
-		//LoadMonster();
+		// desk
+		LoadDesk(mapInfo);
+
+		// Hero
+		LoadHero(VGame.Instance.Clientplayer.HeroId);
+
+
 	}
 	
 	public void Input(Direct dir){

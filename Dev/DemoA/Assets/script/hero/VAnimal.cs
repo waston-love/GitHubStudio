@@ -30,13 +30,12 @@ public class VAnimal
 
 		GameObject spr = GameObject.Instantiate(Resources.Load(info.Path+"/" + info.Id.ToString())) as GameObject;
 		spr.name = info.Id.ToString();
-		//spr.transform.localScale = Vector3.one;
-		//spr.transform.position = info.BirthPos;
 		spr.transform.position = pos;
 
-		_Handle = spr.transform;
-		
+		_Handle = spr.transform;		
 		_CC = this._Handle.gameObject.GetComponent<CharacterController>();
+		if(_CC == null)
+			_CC = this._Handle.gameObject.AddComponent<CharacterController>();
 		_JumpSpeed = Main.Instance.JumpSpeed;
 		
 		_State = VHeroAttackState.Idle;
