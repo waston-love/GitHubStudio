@@ -11,8 +11,8 @@ public class VGame {
 	public bool LoadFinished = false;
 
 	public MapManager MapManager;
-	public VHeroManager HeroManager;
-	public VMonsterTemManager MonsterManager;
+	public VAnimalTemManager AnimalTemManager;
+
 	public VStageTemManager StageTemManager;
 
 	public VClientplayer Clientplayer ;
@@ -38,11 +38,9 @@ public class VGame {
 		MapManager = new MapManager();
 		MapManager.Init();
 
-		HeroManager = new VHeroManager();
-		HeroManager.Init();
+		AnimalTemManager = new VAnimalTemManager();
+		AnimalTemManager.Init();
 
-		MonsterManager = new VMonsterTemManager();
-		MonsterManager.Init();
 
 		StageTemManager  =new VStageTemManager();
 		StageTemManager.Init();

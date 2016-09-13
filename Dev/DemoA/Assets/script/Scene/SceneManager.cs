@@ -9,7 +9,7 @@ public class SceneManager
 	private Dictionary<int,Transform> _ScenePool = new Dictionary<int, Transform>();
 
 	private VHero _Captain;
-	private Dictionary<int,VHero> _MonsterTab = new Dictionary<int, VHero>();
+	private Dictionary<int,VMonster> _MonsterTab = new Dictionary<int, VMonster>();
 
 	public List<HurtSphere> HurtTab = new List< HurtSphere>();
 
@@ -29,17 +29,18 @@ public class SceneManager
 	void LoadHero(int Id){
 
 		_Captain = new VHero();
-		VHeroInfo info = VGame.Instance.HeroManager.GetHero(2000001);
-		_Captain.Init(info);
+		VHeroInfo info = VGame.Instance.AnimalTemManager.GetHero(2000001);
+		_Captain.Init(info,new Vector3(0,0,0));
 
 	}
 
-	void LoadMonster(){
-		VHero monster = new VHero();
-		VHeroInfo info = VGame.Instance.MonsterManager.GetMonster(2000101);
-		monster.Init(info);
+	void LoadMonster(MapInfo map){
+		VMonster mon = new VMonster();
+		VAnimalInfo info = VGame.Instance.AnimalTemManager.GetMonster(map.Monster);
+		mon.Init(info,new Vector3(-2,2,-8));
 
-		_MonsterTab.Add(info.Id,monster);
+		_MonsterTab.Add(info.Id,mon);
+
 	}
 
 	void ClearHero(){}
@@ -49,8 +50,13 @@ public class SceneManager
 
 		VStageInfo stageInfo = VGame.Instance.StageTemManager.GetMap(stageId);
 
+		// ground
 		MapInfo mapInfo = VGame.Instance.MapManager.GetMap(stageInfo.MapId);
 		LoadGround(mapInfo.Ground);
+
+		// monster
+		LoadMonster(mapInfo);
+
 
 		//LoadHero(1);
 		//LoadMonster();
@@ -71,7 +77,7 @@ public class SceneManager
 			return;
 		
 		this._Captain.Active();
-		foreach(VHero hero in _MonsterTab.Values){
+		foreach(VMonster hero in _MonsterTab.Values){
 			hero.Active();
 		}
 
@@ -115,10 +121,10 @@ public class SceneManager
 		}
 	}
 
-	public List<VHero> AllMonster{
+	public List<VMonster> AllMonster{
 		get{
-			List<VHero> list = new List<VHero>();
-			foreach(VHero t in this._MonsterTab.Values){
+			List<VMonster> list = new List<VMonster>();
+			foreach(VMonster t in this._MonsterTab.Values){
 				list.Add(t);
 			}
 			return list;

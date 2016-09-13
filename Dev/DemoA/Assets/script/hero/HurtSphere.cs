@@ -17,7 +17,7 @@ public class HurtSphere
 	{
 	}
 
-	public void Init(float time,VHero parent,Vector3 pos){
+	public void Init(float time,VAnimal parent,Vector3 pos){
 		_EndTime = Time.time + time;
 		_Position = pos;
 	}
@@ -33,16 +33,16 @@ public class HurtSphere
 			}
 			_IsSettle = true;
 		}else{
-			List<VHero> list = VGame.SceneManager.AllMonster;
-			foreach(VHero h in list){
-				if(Vector3.Distance(h.Handle.position,_Position)< 10){
-					if(!_HurtList.Contains(h)){
-						_HurtList.Add(h);
-
-					}
-						
-				}
-			}
+//			
+//			foreach(VMonster h in list){
+//				if(Vector3.Distance(h.Handle.position,_Position)< 10){
+//					if(!_HurtList.Contains(h)){
+//						_HurtList.Add(h);
+//
+//					}
+//						
+//				}
+//			}
 		}
 	}
 }
