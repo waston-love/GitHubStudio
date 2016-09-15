@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 using UnityEngine;
+using Spine.Unity;
 
 public class VAnimal
 {
@@ -18,12 +19,45 @@ public class VAnimal
 	
 	protected Transform _Handle;
 	protected CharacterController _CC;
+	protected SkeletonAnimation _Animation;
 	protected Vector3 _Position;
-	
+
+	protected FaceType _FaceType;
+
+	VAnimation Ani;
+
 	public VAnimal ()
 	{
 		
 	}
+
+	#region 接口
+	public FaceType FaceType{
+		get{
+			return this._FaceType;
+		}
+		set{
+
+			if(this._FaceType == value){
+				return;
+			}
+			this._FaceType = value;
+			this.TurnFace(this._FaceType);
+		}
+	}
+	public VHeroAttackState State{
+		get{
+			return this._State;
+		}
+		set{
+			if(this._State == value)
+				return;
+			this._State = value;
+
+			this.TurnAnimation(this._State);
+		}
+	}
+	#endregion
 	
 	public virtual void Init(VAnimalInfo info,Vector3 pos){
 		_Info = info;
@@ -37,9 +71,23 @@ public class VAnimal
 		if(_CC == null)
 			_CC = this._Handle.gameObject.AddComponent<CharacterController>();
 		_JumpSpeed = Main.Instance.JumpSpeed;
-		
+
+		_Animation = this._Handle.gameObject.GetComponent<SkeletonAnimation>();
+		if(_Animation == null)
+			Debug.LogError(info.Id+ " 没有骨骼动画 ");
+
 		_State = VHeroAttackState.Idle;
+
 		_HP = 11;
+
+		//TODO: 此处确定 人物初始朝向
+		int face = 1;
+		if(face.Equals(FaceType.Left)){
+			this.FaceType = FaceType.Left;
+		}else if(face.Equals(FaceType.Right)){
+			this.FaceType = FaceType.Right;
+		}
+
 	}
 	
 	
@@ -59,8 +107,10 @@ public class VAnimal
 			this._CC.Move(new Vector3(0,0,_Info.MoveSpeed * Time.deltaTime));
 		}else if(dir == Direct.Right){
 			this._CC.Move(new Vector3(_Info.MoveSpeed * Time.deltaTime,0,0));
+			this.FaceType = FaceType.Right;
 		}else if(dir == Direct.Left){
 			this._CC.Move(new Vector3(-_Info.MoveSpeed * Time.deltaTime,0,0));
+			this.FaceType = FaceType.Left;
 		}else if(dir == Direct.Jump){
 			Timer = 0;
 			_JumpSpeed = Main.Instance.JumpSpeed;
@@ -75,20 +125,23 @@ public class VAnimal
 		Timer += Time.deltaTime;
 		this._CC.Move(new Vector3(0,_JumpSpeed -Main.Instance.Gravity * Timer * Timer / 2,0));
 		
-		if(_State == VHeroAttackState.Attack && _AttackEndTime<= Time.time){
+		if(State == VHeroAttackState.Attack && _AttackEndTime<= Time.time){
 			if(_Effect !=null)
 				UnityEngine.Object.Destroy(_Effect.gameObject);
-			_State = VHeroAttackState.Idle;
+			State = VHeroAttackState.Idle;
 		}
 		
 	}
 	
 	private Transform _Effect;
+
+
 	public virtual void Attack(){
-		if(this._State == VHeroAttackState.Idle){
+
+		if(this.State == VHeroAttackState.Idle){
 			
-			this._State = VHeroAttackState.Attack;
-			_AttackEndTime = Time.time + 1.8f;
+			this.State = VHeroAttackState.Attack;
+			_AttackEndTime = Time.time + 0.85f;
 			
 			GameObject temp = GameObject.CreatePrimitive(PrimitiveType.Cube);
 			temp.transform.position = this._Handle.transform.position + new Vector3(3,0,0);
@@ -126,7 +179,48 @@ public class VAnimal
 		
 	}
 	
-	
+	private void TurnFace(FaceType type){
+		switch(type){
+			case FaceType.Left :
+				this._Handle.rotation = Quaternion.Euler(new Vector3(-45,180,0));				
+				break;
+			case FaceType.Right :
+				this._Handle.rotation = Quaternion.Euler(new Vector3(45,0,0));				
+				break;
+		}
+	}
+	public void TurnAnimation(VHeroAttackState state){
+
+		switch(state){
+		case VHeroAttackState.Idle :
+			this._Animation.state.SetAnimation(0,"standing",true);
+			break;
+		case VHeroAttackState.Attack :
+			this._Animation.skeleton.SetColor(Color.blue);
+			this._Animation.state.SetAnimation(0,"attack",false);
+			break;
+		}
+
+	}
+
+}
+
+
+public enum FaceType : ushort{
+	Left = 1,
+	Right = 2,
+}
+
+public class VAnimation{
+	SkeletonAnimation Ani ;
+	public VAnimation(SkeletonAnimation ani){
+		Ani  = ani;
+	}
+
+	public void SetState(string state){
+
+		Ani.state.SetAnimation(0,state,false);
+	}
 }
 
 

@@ -25,7 +25,7 @@ public class VInputController
 			VGame.SceneManager.Input(Direct.Right);
 		}else if(Input.GetKey(KeyCode.Space)){
 			VGame.SceneManager.Input(Direct.Jump);
-		}else if(Input.GetKey(KeyCode.J)){
+		}else if(Input.GetKeyDown(KeyCode.J)){
 			VGame.SceneManager.Input(Direct.Attack);
 		}
 
