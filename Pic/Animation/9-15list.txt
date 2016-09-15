@@ -1,0 +1,5 @@
+1. ¼ÌÐøÊµÏÖ hero -> Hint
+2. 	monster.walk
+	monster.idle
+	monster.attack
+	monster.hint
