@@ -196,7 +196,6 @@ public class VAnimal
 			this._Animation.state.SetAnimation(0,"standing",true);
 			break;
 		case VHeroAttackState.Attack :
-			this._Animation.skeleton.SetColor(Color.blue);
 			this._Animation.state.SetAnimation(0,"attack",false);
 			break;
 		}

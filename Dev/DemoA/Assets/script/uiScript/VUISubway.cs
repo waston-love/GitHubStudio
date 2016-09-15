@@ -19,7 +19,6 @@ public class VUISubway : VUIBase
 		this.gameObject.SetActive(true);
 
 		VRepresent.UIManager.CloseWindow<VUIMainMenu>();
-		VRepresent.UIManager.CloseWindow<VUIPlayerInofoWindow>();
 	}
 	
 	public override void OnClose()
@@ -62,7 +61,7 @@ public class VUISubway : VUIBase
 		VGame.SceneManager.StartGame(stageId);
 		this.OnClose();
 
-		VRepresent.UIManager.OpenWindow<VUIPlayerInofoWindow>();
+	
 	}
 	#endregion
 }

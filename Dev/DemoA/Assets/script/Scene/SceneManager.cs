@@ -73,6 +73,7 @@ public class SceneManager
 		LoadHero(VGame.Instance.Clientplayer.HeroId);
 
 
+		VRepresent.UIManager.OpenWindow<VUIPlayerInofoWindow>(100.0f,75.0f);
 	}
 	
 	public void Input(Direct dir){
