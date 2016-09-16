@@ -12,8 +12,8 @@ public class VHero : VAnimal
 
 	}
 
-	public override void Init(VAnimalInfo info,Vector3 pos) {
-		base.Init(info,pos);
+	public override void Init(VAnimalInfo info,Vector3 pos,int weaponId) {
+		base.Init(info,pos,weaponId);
 
 	}
 

@@ -26,6 +26,10 @@ public class VAnimal
 
 	VAnimation Ani;
 
+	protected VAttribute _Attribute;
+
+	protected VWeapon _Weapon;
+
 	public VAnimal ()
 	{
 		
@@ -57,9 +61,20 @@ public class VAnimal
 			this.TurnAnimation(this._State);
 		}
 	}
+	public Transform Handle{ 
+		get {
+			return this._Handle;
+		} 
+	}
+	public VAttribute Attribute{
+		get{
+			return this._Attribute;
+		}
+	}
 	#endregion
-	
-	public virtual void Init(VAnimalInfo info,Vector3 pos){
+
+	#region Init
+	public virtual void Init(VAnimalInfo info,Vector3 pos,int weaponId){
 		_Info = info;
 
 		GameObject spr = GameObject.Instantiate(Resources.Load(info.Path+"/" + info.Id.ToString())) as GameObject;
@@ -88,28 +103,29 @@ public class VAnimal
 			this.FaceType = FaceType.Right;
 		}
 
+		_Attribute = new VAttribute();
+		_Attribute.Init(info);
+
+		_Weapon = new VWeapon();
+		_Weapon.Init(this,weaponId);
 	}
 	
 	
 	public virtual void SetupSkill(int skillId){}
 	
-	
-	public Transform Handle{ 
-		get {
-			return this._Handle;
-		} 
-	}
-	
+	#endregion
+
+	#region Method
 	public virtual void Move(Direct dir){
 		if(dir == Direct.Down){
-			this._CC.Move(new Vector3(0,0,-_Info.MoveSpeed * Time.deltaTime));
+			this._CC.Move(new Vector3(0,0,-_Attribute.MoveSpeed * Time.deltaTime));
 		}else if(dir == Direct.Up){
-			this._CC.Move(new Vector3(0,0,_Info.MoveSpeed * Time.deltaTime));
+			this._CC.Move(new Vector3(0,0,_Attribute.MoveSpeed * Time.deltaTime));
 		}else if(dir == Direct.Right){
-			this._CC.Move(new Vector3(_Info.MoveSpeed * Time.deltaTime,0,0));
+			this._CC.Move(new Vector3(_Attribute.MoveSpeed * Time.deltaTime,0,0));
 			this.FaceType = FaceType.Right;
 		}else if(dir == Direct.Left){
-			this._CC.Move(new Vector3(-_Info.MoveSpeed * Time.deltaTime,0,0));
+			this._CC.Move(new Vector3(-_Attribute.MoveSpeed * Time.deltaTime,0,0));
 			this.FaceType = FaceType.Left;
 		}else if(dir == Direct.Jump){
 			Timer = 0;
@@ -182,10 +198,11 @@ public class VAnimal
 	private void TurnFace(FaceType type){
 		switch(type){
 			case FaceType.Left :
-				this._Handle.rotation = Quaternion.Euler(new Vector3(-45,180,0));				
+				this._Handle.rotation = Quaternion.Euler(new Vector3(0,180,0));				
 				break;
 			case FaceType.Right :
-				this._Handle.rotation = Quaternion.Euler(new Vector3(45,0,0));				
+				this._Handle.rotation = Quaternion.Euler(new Vector3(0,0,0));		
+
 				break;
 		}
 	}
@@ -193,14 +210,15 @@ public class VAnimal
 
 		switch(state){
 		case VHeroAttackState.Idle :
-			this._Animation.state.SetAnimation(0,"standing",true);
+			this._Animation.state.SetAnimation(0,"walk",true);
 			break;
 		case VHeroAttackState.Attack :
-			this._Animation.state.SetAnimation(0,"attack",false);
+			this._Animation.state.SetAnimation(0,"attack",true);
 			break;
 		}
 
 	}
+	#endregion
 
 }
 
@@ -222,4 +240,19 @@ public class VAnimation{
 	}
 }
 
+public class VAttribute{
+	
+	public void Init(VAnimalInfo info){
+		Hp = info.Hp;		
+		AttackPhysic = info.AttackPhysic;		
+		AttackCriticalPossibility = info.AttackCriticalPossibility;		
+		MoveSpeed = info.MoveSpeed;		
+	}
+
+	public float Hp;
+	public float Defense;
+	public float AttackPhysic;
+	public float AttackCriticalPossibility;
+	public float MoveSpeed;
+}
 

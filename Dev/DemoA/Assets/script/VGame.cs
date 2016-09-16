@@ -14,6 +14,7 @@ public class VGame {
 	public VAnimalTemManager AnimalTemManager;
 
 	public VStageTemManager StageTemManager;
+	public VWeaponTemMnanager WeaponTemManager;
 
 	public VClientplayer Clientplayer ;
 
@@ -44,6 +45,9 @@ public class VGame {
 
 		StageTemManager  =new VStageTemManager();
 		StageTemManager.Init();
+
+		WeaponTemManager = new VWeaponTemMnanager();
+		WeaponTemManager.Init();
 
 		InitBaseConfiged = true;
 		CheckLoaded();

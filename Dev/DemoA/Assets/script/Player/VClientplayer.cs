@@ -32,6 +32,11 @@ public class VClientplayer
 			return this._BaseDada.HeroId;
 		}
 	}
+	public int GetWeapon{
+		get{
+			return (int)30001001;
+		}
+	}
 
 	public void SaveData(){
 		//TODO: 保存 当前数据 进入 本地缓存

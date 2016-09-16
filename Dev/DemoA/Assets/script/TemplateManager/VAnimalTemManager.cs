@@ -34,8 +34,12 @@ public class VAnimalTemManager
 			info.Id = tab.GetInteger(row, "Id");
 			info.Path = tab.GetString(row, "Path");
 			info.Name = tab.GetString(row, "Name");
-			info.MoveSpeed = tab.GetFloat(row, "Speed");
-			info.BirthPos = new Vector3(tab.GetFloat(row,"X"),tab.GetFloat(row,"Y"),tab.GetFloat(row,"Z"));
+			info.Level = tab.GetInteger(row, "Level");
+			info.Hp = tab.GetFloat(row, "Hp");
+			info.Defense = tab.GetFloat(row, "Defense");
+			info.AttackPhysic = tab.GetFloat(row, "AttackPhysic");
+			info.AttackCriticalPossibility =tab.GetFloat(row, "AttackCriticalPossibility");
+			info.MoveSpeed = tab.GetFloat(row, "MoveSpeed");
 
 			setting.Add(info.Id,info);
 		}
@@ -72,8 +76,12 @@ public class VAnimalInfo{
 	public int Id;
 	public string Path;
 	public string Name;
+	public int Level;
+	public float Hp;
+	public float Defense;
+	public float AttackPhysic;
+	public float AttackCriticalPossibility;
 	public float MoveSpeed;
-	public Vector3 BirthPos = Vector3.zero;
 }
 
 public class VHeroInfo : VAnimalInfo{

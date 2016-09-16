@@ -31,21 +31,21 @@ public class SceneManager
 
 		_Captain = new VHero();
 		VAnimalInfo info = VGame.Instance.AnimalTemManager.GetHero(Id);
-		_Captain.Init(info,new Vector3(-2,-1.8f,-3));
+		_Captain.Init(info,new Vector3(-2,-1.8f,-3),VGame.Instance.Clientplayer.GetWeapon);
 
 	}
 
 	void LoadDesk(MapInfo map){
 		VDesk desk = new VDesk();
 		VAnimalInfo info = VGame.Instance.AnimalTemManager.GetDesk(map.Desk);
-		desk.Init(info,new Vector3(2,2,-8));
+		desk.Init(info,new Vector3(2,2,-8),0);
 		_DeskTab.Add(info.Id,desk);
 	}
 
 	void LoadMonster(MapInfo map){
 		VMonster mon = new VMonster();
 		VAnimalInfo info = VGame.Instance.AnimalTemManager.GetMonster(map.Monster);
-		mon.Init(info,new Vector3(0,-0.5f,-2));
+		mon.Init(info,new Vector3(0,-0.5f,-2),0);
 		_MonsterTab.Add(info.Id,mon);
 
 	}

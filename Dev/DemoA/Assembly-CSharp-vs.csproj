@@ -156,6 +156,7 @@
      <Compile Include="Assets\script\TemplateManager\MapManager.cs" />
      <Compile Include="Assets\script\TemplateManager\VAnimalTemManager.cs" />
      <Compile Include="Assets\script\TemplateManager\VStageTemManager.cs" />
+     <Compile Include="Assets\script\TemplateManager\VWeaponTemMnanager.cs" />
      <Compile Include="Assets\script\VGame.cs" />
      <Compile Include="Assets\script\VRepresent.cs" />
      <Compile Include="Assets\script\baseScript\VInputController.cs" />
@@ -165,6 +166,7 @@
      <Compile Include="Assets\script\hero\VDesk.cs" />
      <Compile Include="Assets\script\hero\VHero.cs" />
      <Compile Include="Assets\script\hero\VMonster.cs" />
+     <Compile Include="Assets\script\skill\VWeapon.cs" />
      <Compile Include="Assets\script\uiScript\VUIBase.cs" />
      <Compile Include="Assets\script\uiScript\VUILoading.cs" />
      <Compile Include="Assets\script\uiScript\VUIMainMenu.cs" />
@@ -249,6 +251,7 @@
      <None Include="Assets\spine-unity\Editor\Resources\SpineAssetDatabaseMarker.txt" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Masked 1.shader" />
      <None Include="Assets\spine-unity\Shaders\HiddenPass.shader" />
+     <None Include="Assets\Resources\Animation\2\20002001\skeleton.atlas.txt" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text 2.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Masked 2.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text 1.shader" />
@@ -263,6 +266,7 @@
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Masked 3.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored 1.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored 3.shader" />
+     <None Include="Assets\Resources\Animation\2\20001001\skeleton.atlas.txt" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored 2.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text 3.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Packed 2.shader" />

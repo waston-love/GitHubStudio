@@ -65,6 +65,7 @@ public class Main : MonoBehaviour {
 	public static string MonsterDataPath = "gamesetting/hero/monster.tab";
 	public static string DeskDataPath = "gamesetting/hero/desk.tab";
 
+	public static string WeaponDataPath = "gamesetting/weapon/weapon.tab";
 	#endregion
 
 	#region Debug
